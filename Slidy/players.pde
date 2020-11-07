@@ -121,4 +121,14 @@ class Players {
 void playerMoved() {
   pa.computeAvalableMoves();
   pb.computeAvalableMoves();
+  
+  //end detection
+  if (pa.allowedFutureMoves == 0 && pb.allowedFutureMoves == 0) {
+    int distance = abs(pa.positionX - pb.positionX) + abs(pa.positionY - pb.positionY);
+    if (distance == 1) {
+      print("Complete");
+    } else {
+      print("failed");
+    }
+  }
 }

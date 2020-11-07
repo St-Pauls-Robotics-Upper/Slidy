@@ -26,5 +26,4 @@ void keyPressed() {
       pb.movePlayer(Direction.right);
     break;
   }
-  println(keyCode);
 }
