@@ -1,5 +1,5 @@
 Players pa = new Players(1,1,1,8);
-Players pb = new Players(5,5,2,8);
+Players pb = new Players(8,5,2,8);
 
 enum Direction { up, down, left, right}
 
