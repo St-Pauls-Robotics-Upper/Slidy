@@ -1,4 +1,4 @@
-int[][] mapBuffer = new int[10][7];
+int[][] mapBuffer;
 int gridSize = 64;
 
 int mapSizeWidth, mapSizeHeight;
@@ -39,6 +39,45 @@ void drawGameBoard() {
           noStroke();
           fill(200,100,100);
           rect(drawingX, drawingY, gridSize, gridSize);
+        break;
+        case -1:
+          stroke(0);
+          fill(255);
+          rect(drawingX, drawingY, gridSize, gridSize);
+        break;
+      }
+    }
+  }
+}
+
+void loadData() {
+  String[] lines = loadStrings("map1.txt");
+  //load world telemetry
+  String firstLine = lines[0];
+  String[] firstSplit = firstLine.split(",");
+  mapBuffer = new int[Integer.parseInt(firstSplit[0])][Integer.parseInt(firstSplit[1])];
+  //load playerA telemetry
+  String secondLine = lines[1];
+  String[] secondSplit = secondLine.split(",");
+  pa = new Players(Integer.parseInt(secondSplit[0]),Integer.parseInt(secondSplit[1]),1,Integer.parseInt(secondSplit[2]));
+  //load playerB telemetry
+  String thirdLine = lines[2];
+  String[] thirdSplit = thirdLine.split(",");
+  pb = new Players(Integer.parseInt(thirdSplit[0]),Integer.parseInt(thirdSplit[1]),2,Integer.parseInt(thirdSplit[2]));
+  //load map data
+  
+  updateMap();
+  for (int iy = 0; iy < lines.length - 3; iy++) {
+    int yValueInString = iy + 3;
+    String line = lines[yValueInString];
+    for (int ix = 0; ix < line.length(); ix++) {
+      char character = line.charAt(ix);
+      switch (character) {
+        case 'x':
+          mapBuffer[ix][iy] = -1;
+        break;
+        default: 
+          //mapBuffer[ix][iy] = 0;
         break;
       }
     }

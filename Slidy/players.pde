@@ -1,5 +1,5 @@
-Players pa = new Players(1,1,1,8);
-Players pb = new Players(8,5,2,8);
+Players pa;
+Players pb;
 
 enum Direction { up, down, left, right}
 
@@ -25,8 +25,6 @@ class Players {
     } 
     
     boolean canMoveSuccessfully = true;
-    int lastX = positionX;
-    int lastY = positionY;
     //move
     int targetX = positionX;
     int targetY = positionY;
@@ -57,9 +55,11 @@ class Players {
       canMoveSuccessfully = false;
     }
     //it must be not on it selves body
-    int targetTile = mapBuffer[targetX][targetY];
-    if (targetTile == identity || targetTile == -1) {
-      canMoveSuccessfully = false;
+    if (canMoveSuccessfully) {
+      int targetTile = mapBuffer[targetX][targetY];
+      if (targetTile == identity || targetTile == -1) {
+        canMoveSuccessfully = false;
+      }
     }
     
     if (canMoveSuccessfully) {
