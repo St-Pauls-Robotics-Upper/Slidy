@@ -50,8 +50,8 @@ void drawGameBoard() {
   }
 }
 
-void loadData() {
-  String[] lines = loadStrings("map1.txt");
+void loadData(int file) {
+  String[] lines = loadStrings("map" + file + ".txt");
   //load world telemetry
   String firstLine = lines[0];
   String[] firstSplit = firstLine.split(",");

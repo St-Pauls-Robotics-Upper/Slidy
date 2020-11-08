@@ -1,4 +1,8 @@
 void keyPressed() {
+  if (transitionStartTime != -1) {
+    return;
+  }
+  
   switch (keyCode) {
     case 87: //w
       pa.movePlayer(Direction.up);

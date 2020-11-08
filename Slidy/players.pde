@@ -152,9 +152,9 @@ void playerMoved() {
   if (pa.allowedFutureMoves == 0 && pb.allowedFutureMoves == 0) {
     int distance = abs(pa.positionX - pb.positionX) + abs(pa.positionY - pb.positionY);
     if (distance == 1) {
-      print("Complete");
+      doneLevel(true);
     } else {
-      print("failed");
+      doneLevel(false);
     }
   }
 }
