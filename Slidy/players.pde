@@ -8,14 +8,22 @@ class Players {
   int identity;
   int maxAllowedTiles;
   int allowedFutureMoves;
+  boolean havePendingTilings = false;
+  
+  float animatedPosX, animatedPosY;
   
   Players(int positionX, int positionY, int identity, int maxAllowedMoves) {
     this.positionX = positionX;
     this.positionY = positionY;
     this.maxAllowedTiles = maxAllowedMoves + 1;
     this.identity = identity;
+    
     layTile();
-    computeAvalableMoves();
+  }
+  
+  void forcePosition() {
+    animatedPosX = topLeftX + positionX * gridSize;
+    animatedPosY = topLeftY + positionY * gridSize;
   }
   
   void movePlayer(Direction direction) {
@@ -63,12 +71,16 @@ class Players {
     }
     
     if (canMoveSuccessfully) {
+      if (havePendingTilings) {
+        layTile();
+      }
+      
       //move it
       positionX = targetX;
       positionY = targetY;
       
       //lay tile at current position
-      layTile();
+      havePendingTilings = true;
     }
     
     playerMoved();
@@ -76,6 +88,7 @@ class Players {
   
   void layTile() {
     mapBuffer[positionX][positionY] = identity;
+    computeAvalableMoves();
   }
   
   void computeAvalableMoves() {
@@ -93,6 +106,20 @@ class Players {
   void render() {
     int worldPositionX = topLeftX + positionX * gridSize;
     int worldPositionY = topLeftY + positionY * gridSize;
+    
+    float factor = 10/frameRate;
+    animatedPosX += ((float)worldPositionX - animatedPosX) * factor;
+    animatedPosY += ((float)worldPositionY - animatedPosY) * factor;
+    
+    float difference = abs(animatedPosX - worldPositionX) + abs(animatedPosY - worldPositionY);
+    
+    if (difference <= 1.0) {
+      forcePosition();
+      layTile();
+      
+      havePendingTilings = false;
+    }
+    
     if (allowedFutureMoves > 0) {
       if (identity == 1) {
         stroke(100,100,255);
@@ -112,9 +139,9 @@ class Players {
         fill(255,100,100);
       }
     }
-    rect(worldPositionX, worldPositionY, gridSize, gridSize);
+    rect(animatedPosX, animatedPosY, gridSize, gridSize);
     fill(0);
-    text(allowedFutureMoves, worldPositionX + 10, worldPositionY + 20);
+    text(allowedFutureMoves, animatedPosX + 10, animatedPosY + 20);
   }
 }
 

@@ -82,4 +82,7 @@ void loadData() {
       }
     }
   }
+  
+  pa.forcePosition();
+  pb.forcePosition();
 }
