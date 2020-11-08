@@ -36,4 +36,4 @@ The second line means player A start at ```2,0```, and have ```6``` moves.
 The third line means player B start at ```4,5```, and have ```7``` moves.
 
 The world will look this: 
-![Image of example world](https://octodex.github.com/images/yaktocat.png)
+![Image of example world](/documentations/images/worldExample1.png)
