@@ -27,7 +27,6 @@ class Players {
   }
   
   void movePlayer(Direction direction) {
-    computeAvalableMoves();
     if (allowedFutureMoves == 0) {
       return;
     } 
@@ -71,6 +70,7 @@ class Players {
     }
     
     if (canMoveSuccessfully) {
+      computeAvalableMoves();
       if (havePendingTilings) {
         layTile();
       }
@@ -92,7 +92,7 @@ class Players {
   }
   
   void computeAvalableMoves() {
-    int usedSpace = 0;
+    int usedSpace = havePendingTilings ? 1 : 0;
     for (int[] colum: mapBuffer) {
       for (int element: colum) {
         if (element == identity) {
@@ -115,9 +115,8 @@ class Players {
     
     if (difference <= 1.0) {
       forcePosition();
-      layTile();
-      
       havePendingTilings = false;
+      layTile();
     }
     
     if (allowedFutureMoves > 0) {
