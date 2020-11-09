@@ -5,6 +5,8 @@ int mapSizeWidth, mapSizeHeight;
 int mapWidth, mapHeight;
 int topLeftX, topLeftY;
 
+String worldName = "";
+
 void updateMap() {
   mapSizeWidth = mapBuffer.length;
   mapSizeHeight = mapBuffer[0].length;
@@ -51,24 +53,26 @@ void drawGameBoard() {
 }
 
 void loadData(int file) {
-  String[] lines = loadStrings("map" + file + ".txt");
+  String[] lines = loadStrings("maps/map" + file + ".txt");
   //load world telemetry
-  String firstLine = lines[0];
+  worldName = lines[0];
+  
+  String firstLine = lines[1];
   String[] firstSplit = firstLine.split(",");
   mapBuffer = new int[Integer.parseInt(firstSplit[0])][Integer.parseInt(firstSplit[1])];
   //load playerA telemetry
-  String secondLine = lines[1];
+  String secondLine = lines[2];
   String[] secondSplit = secondLine.split(",");
   pa = new Players(Integer.parseInt(secondSplit[0]),Integer.parseInt(secondSplit[1]),1,Integer.parseInt(secondSplit[2]));
   //load playerB telemetry
-  String thirdLine = lines[2];
+  String thirdLine = lines[3];
   String[] thirdSplit = thirdLine.split(",");
   pb = new Players(Integer.parseInt(thirdSplit[0]),Integer.parseInt(thirdSplit[1]),2,Integer.parseInt(thirdSplit[2]));
   //load map data
   
   updateMap();
-  for (int iy = 0; iy < lines.length - 3; iy++) {
-    int yValueInString = iy + 3;
+  for (int iy = 0; iy < lines.length - 4; iy++) {
+    int yValueInString = iy + 4;
     String line = lines[yValueInString];
     for (int ix = 0; ix < line.length(); ix++) {
       char character = line.charAt(ix);

@@ -18,7 +18,9 @@ class Players {
     this.maxAllowedTiles = maxAllowedMoves + 1;
     this.identity = identity;
     
-    layTile();
+    mapBuffer[positionX][positionY] = identity;
+    
+    computeAvalableMoves();
   }
   
   void forcePosition() {
@@ -29,10 +31,7 @@ class Players {
   void movePlayer(Direction direction) {
     if (allowedFutureMoves == 0) {
       return;
-    } 
-    
-    boolean canMoveSuccessfully = true;
-    //move
+    }
     int targetX = positionX;
     int targetY = positionY;
     switch(direction) {
@@ -49,6 +48,28 @@ class Players {
         targetX ++;
       break;
     }
+    
+    boolean canMoveSuccessfully = checkForMobilityTo(targetX, targetY);
+    
+    if (canMoveSuccessfully) {
+      computeAvalableMoves();
+      if (havePendingTilings) {
+        layTile();
+      }
+      
+      //move it
+      positionX = targetX;
+      positionY = targetY;
+      
+      //lay tile at current position
+      havePendingTilings = true;
+    }
+    
+    playerMoved();
+  }
+  
+  boolean checkForMobilityTo(int targetX, int targetY) {
+    boolean canMoveSuccessfully = true;
     //y must be within range
     if (targetY < 0 || targetY >= mapSizeHeight) {
       canMoveSuccessfully = false;
@@ -68,27 +89,22 @@ class Players {
         canMoveSuccessfully = false;
       }
     }
+    return canMoveSuccessfully;
+  }
+  
+  boolean checkForAllMobility() {
     
-    if (canMoveSuccessfully) {
-      computeAvalableMoves();
-      if (havePendingTilings) {
-        layTile();
-      }
-      
-      //move it
-      positionX = targetX;
-      positionY = targetY;
-      
-      //lay tile at current position
-      havePendingTilings = true;
-    }
+    boolean up = checkForMobilityTo(positionX, positionY - 1);
+    boolean down = checkForMobilityTo(positionX, positionY + 1);
+    boolean left = checkForMobilityTo(positionX - 1, positionY);
+    boolean right = checkForMobilityTo(positionX + 1, positionY);
     
-    playerMoved();
+    return up || down || left || right;
   }
   
   void layTile() {
     mapBuffer[positionX][positionY] = identity;
-    computeAvalableMoves();
+    playerMoved();
   }
   
   void computeAvalableMoves() {
@@ -107,7 +123,7 @@ class Players {
     int worldPositionX = topLeftX + positionX * gridSize;
     int worldPositionY = topLeftY + positionY * gridSize;
     
-    float factor = 10/frameRate;
+    float factor = 0.2;
     animatedPosX += ((float)worldPositionX - animatedPosX) * factor;
     animatedPosY += ((float)worldPositionY - animatedPosY) * factor;
     
@@ -115,8 +131,10 @@ class Players {
     
     if (difference <= 1.0) {
       forcePosition();
-      havePendingTilings = false;
-      layTile();
+      if (havePendingTilings) {
+        havePendingTilings = false;
+        layTile();
+      }
     }
     
     if (allowedFutureMoves > 0) {
@@ -140,7 +158,8 @@ class Players {
     }
     rect(animatedPosX, animatedPosY, gridSize, gridSize);
     fill(0);
-    text(allowedFutureMoves, animatedPosX + 10, animatedPosY + 20);
+    textFont(moveCounterFont);
+    text(allowedFutureMoves, animatedPosX + 20, animatedPosY + 45);
   }
 }
 
@@ -149,12 +168,21 @@ void playerMoved() {
   pb.computeAvalableMoves();
   
   //end detection
-  if (pa.allowedFutureMoves == 0 && pb.allowedFutureMoves == 0) {
-    int distance = abs(pa.positionX - pb.positionX) + abs(pa.positionY - pb.positionY);
-    if (distance == 1) {
+  if (!pa.havePendingTilings && !pb.havePendingTilings && transitionStartTime != 1) {
+    boolean distanceReached = (abs(pa.positionX - pb.positionX) + abs(pa.positionY - pb.positionY)) == 1;
+    boolean countReached = pa.allowedFutureMoves == 0 && pb.allowedFutureMoves == 0;
+    if (countReached && distanceReached) {
       doneLevel(true);
-    } else {
+      return;
+    }
+    if (countReached && !distanceReached) {
       doneLevel(false);
+      return;
+    }
+    if (distanceReached) {
+      if (!pa.checkForAllMobility() && !pb.checkForAllMobility()) {
+        doneLevel(false);
+      }
     }
   }
 }
