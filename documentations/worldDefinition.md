@@ -4,6 +4,7 @@ this game use .txt file for levels. Each .txt file defines the grid size, the po
 The format is listed below: 
 
 ```
+[World Name]
 [World Width],[World Height]
 [playerA starting x pos],[playerA starting y pos],[playerA move limit]
 [playerB starting x pos],[playerB starting y pos],[playerB move limit]
@@ -21,6 +22,7 @@ Note: More is comming
 A fully written world file sould look like this: 
 
 ```
+Slidy
 5,6
 2,0,6
 4,5,7
@@ -31,9 +33,10 @@ xx xx
  x x 
    x 
 ```
-The first line ```5,6``` means the grid is 5x6.
-The second line means player A start at ```2,0```, and have ```6``` moves.
-The third line means player B start at ```4,5```, and have ```7``` moves.
+The first line ```Slidy``` will be the display title. 
+The second line ```5,6``` means the grid is 5x6.
+The third line means player A start at ```2,0```, and have ```6``` moves.
+The forth line means player B start at ```4,5```, and have ```7``` moves.
 
 The world will look this: 
 ![Image of example world](/documentations/images/worldExample1.png)
