@@ -179,10 +179,8 @@ void playerMoved() {
       doneLevel(false);
       return;
     }
-    if (distanceReached) {
-      if (!pa.checkForAllMobility() && !pb.checkForAllMobility()) {
-        doneLevel(false);
-      }
+    if (!pa.checkForAllMobility() && !pb.checkForAllMobility()) {
+      doneLevel(false);
     }
   }
 }
