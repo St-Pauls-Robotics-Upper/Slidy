@@ -1,6 +1,6 @@
 int level = 0;
 float transitionStartTime = -1;
-float transitionDuration = 1000;
+float transitionDuration = 800;
 boolean transitionalToBlack = false;
 boolean transitionalToNextLevel = true;
 
