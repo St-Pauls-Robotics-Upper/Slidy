@@ -25,27 +25,33 @@ void drawGameBoard() {
       int drawingY = topLeftY + iy * gridSize;
       
       //draw baclgroundGrid
-      stroke(30);
-      fill(0);
-      rect(drawingX, drawingY, gridSize, gridSize);
+      pg.stroke(30);
+      pg.fill(255);
+      pg.rect(drawingX, drawingY, gridSize, gridSize);
       
       //draw trial
       int bufferValue = mapBuffer[ix][iy];
       switch (bufferValue) {
         case 1:
-          noStroke();
-          fill(100,100,200);
-          rect(drawingX, drawingY, gridSize, gridSize);
+          pg.noStroke();
+          pg.fill(100,100,200);
+          pg.rect(drawingX, drawingY, gridSize, gridSize);
         break;
         case 2:
-          noStroke();
-          fill(200,100,100);
-          rect(drawingX, drawingY, gridSize, gridSize);
+          pg.noStroke();
+          pg.fill(200,100,100);
+          pg.rect(drawingX, drawingY, gridSize, gridSize);
         break;
         case -1:
-          stroke(0);
-          fill(255);
-          rect(drawingX, drawingY, gridSize, gridSize);
+          pg.stroke(255);
+          pg.fill(100,100,105);
+          //rect(drawingX, drawingY, gridSize, gridSize);
+          
+          pg.pushMatrix();
+          pg.translate(drawingX + gridSize/2, drawingY + gridSize/2);
+          pg.box(gridSize, gridSize, 200);
+          pg.popMatrix();
+          
         break;
       }
     }

@@ -14,15 +14,12 @@ void doneLevel(boolean finishLevel) {
   transitionStartTime = millis();
   
   if(level == 3 && finishLevel) {
+    //change the level == 3 to maximum leves
     exit();
   }
 }
 
 void render() {
-  fill(255);
-  textFont(largeTitleFont);
-  String content = worldName;
-  text(content, (width - textWidth(content))/2, 60);
   
   renderGame();
   float countdown = transitionTimer();
@@ -63,10 +60,19 @@ void renderSpash(float opacity) {
 }
 
 void renderGame() {
+  pg.beginDraw();
+  pg.background(0);
   drawGameBoard();
   pa.render();
   pb.render();
-  stroke(255);
-  fill(0,0);
-  rect(topLeftX, topLeftY, mapWidth, mapHeight);
+  pg.stroke(255);
+  pg.fill(0,0);
+  pg.rect(topLeftX, topLeftY, mapWidth, mapHeight);
+  pg.endDraw();
+  image(pg,0,0);
+  
+  fill(255);
+  textFont(largeTitleFont);
+  String content = worldName;
+  text(content, (width - textWidth(content))/2, 60);
 }

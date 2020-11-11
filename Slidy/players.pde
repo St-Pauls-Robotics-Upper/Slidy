@@ -10,6 +10,8 @@ class Players {
   int allowedFutureMoves;
   boolean havePendingTilings = false;
   
+  PImage img;
+  
   float animatedPosX, animatedPosY;
   
   Players(int positionX, int positionY, int identity, int maxAllowedMoves) {
@@ -19,6 +21,8 @@ class Players {
     this.identity = identity;
     
     mapBuffer[positionX][positionY] = identity;
+    
+    img = loadImage("player"+identity+".png");
     
     computeAvalableMoves();
   }
@@ -69,6 +73,10 @@ class Players {
   }
   
   boolean checkForMobilityTo(int targetX, int targetY) {
+    if (allowedFutureMoves == 0) {
+      return false;
+    }
+    
     boolean canMoveSuccessfully = true;
     //y must be within range
     if (targetY < 0 || targetY >= mapSizeHeight) {
@@ -139,27 +147,36 @@ class Players {
     
     if (allowedFutureMoves > 0) {
       if (identity == 1) {
-        stroke(100,100,255);
-        fill(0,0,255);
+        pg.stroke(200,200,255);
+        pg.fill(0,0,255);
       }
       if (identity == 2) {
-        stroke(255,100,100);
-        fill(255,0,0);
+        pg.stroke(255,200,200);
+        pg.fill(255,0,0);
       }
     } else {
       if (identity == 1) {
-        noStroke();
-        fill(100,100,255);
+        pg.stroke(255,200,200);
+        pg.fill(100,100,255);
       }
       if (identity == 2) {
-        noStroke();
-        fill(255,100,100);
+        pg.stroke(255,200,200);
+        pg.fill(255,100,100);
       }
     }
-    rect(animatedPosX, animatedPosY, gridSize, gridSize);
-    fill(0);
-    textFont(moveCounterFont);
-    text(allowedFutureMoves, animatedPosX + 20, animatedPosY + 45);
+    //rect(animatedPosX, animatedPosY, gridSize, gridSize);
+    //image(img, animatedPosX, animatedPosY,gridSize,gridSize);
+    pg.pushMatrix();
+    pg.translate(animatedPosX + gridSize/2, animatedPosY + gridSize/2);
+    pg.box(gridSize - 10, gridSize - 10, 200);
+    pg.popMatrix();
+    
+    pg.pushMatrix();
+    pg.translate(0, 0, 100.0);
+    pg.textFont(moveCounterFont);
+    pg.fill(0);
+    pg.text(allowedFutureMoves, animatedPosX + gridSize/2 - pg.textWidth(allowedFutureMoves + "")/2, animatedPosY + 40);
+    pg.popMatrix();
   }
 }
 
