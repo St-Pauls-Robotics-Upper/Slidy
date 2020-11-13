@@ -77,9 +77,11 @@ void renderGame() {
   pg.beginDraw();
   pg.background(0);
   
-  float zoom = 0;
-  pg.camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  float zoomOutForY = max(0, (mapSizeHeight - 7) * 70);
+  float zoomOutForX = max(0, (mapSizeWidth - 11) * 45);
   
+  float zoom = max(zoomOutForY, zoomOutForX);
+  pg.camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0) + zoom, width/2.0, height/2.0, 0, 0, 1, 0);
   drawGameBoard();
   pa.render();
   pb.render();
