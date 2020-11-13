@@ -1,16 +1,21 @@
-PFont largeTitleFont;
+PFont titleFont;
+PFont bodyFont;
+PFont captionFont;
 PFont moveCounterFont;
 
 PGraphics pg;
 
 void setup() {
-  largeTitleFont = loadFont("AvenirNext-UltraLight-70.vlw");
+  titleFont = loadFont("AvenirNext-UltraLight-70.vlw");
+  bodyFont = loadFont("AvenirNext-Regular-25.vlw");
+  captionFont = loadFont("AvenirNext-DemiBold-15.vlw");
   moveCounterFont = loadFont("Apple-Chancery-40.vlw");
-  size(900,700,P2D);
+  size(900, 700, P2D);
   pg = createGraphics(900, 700, P3D);
   pg.pixelDensity = 2;
+  pg.smooth(2);
   pixelDensity(2);
-  smooth(4);
+  smooth(2);
   //frameRate(5);
   loadData(level);
 }

@@ -61,16 +61,13 @@ void renderSpash(float opacity) {
   if (transitionalToNextLevel) {
   } else {
     fill(255, opacity);
-    textFont(largeTitleFont);
-    String content = "TRY AGAIN";
-    text(content, (width - textWidth(content))/2, height/2);
+    centerAlignedWord("TRY AGAIN", height/2, FontSize.title);
   }
 }
 
 void renderEndScreen() {
   fill(255);
-  textFont(largeTitleFont);
-  text("abc", 300, 300);
+  centerAlignedWord("Thanks for Playing Slidy", 400, FontSize.title);
 }
 
 void renderGame() {
@@ -92,7 +89,8 @@ void renderGame() {
   image(pg,0,0);
   
   fill(255);
-  textFont(largeTitleFont);
-  String content = worldName;
-  text(content, (width - textWidth(content))/2, 60);
+  //textFont(largeTitleFont);
+  //String content = worldName;
+  //text(content, (width - textWidth(content))/2, 60);
+  centerAlignedWord(worldName, 65, FontSize.title);
 }

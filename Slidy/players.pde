@@ -12,7 +12,7 @@ class Players {
   
   PImage img;
   
-  float animatedPosX, animatedPosY;
+  float animatedPosX, animatedPosY, animatedHeight;
   
   Players(int positionX, int positionY, int identity, int maxAllowedMoves) {
     this.positionX = positionX;
@@ -164,15 +164,27 @@ class Players {
         pg.fill(255,100,100);
       }
     }
+    
     pg.rect(animatedPosX, animatedPosY, gridSize, gridSize);
-    //image(img, animatedPosX, animatedPosY,gridSize,gridSize);
+    
+    
+    Float baseHeight = 20.0;
+    Float maxHeight = 100.0;
+    Float extendedRatio = 0.0;
+    if (maxAllowedTiles > 0) {
+      extendedRatio = allowedFutureMoves / (maxAllowedTiles - 1.0);
+    }
+    Float playerHeight = baseHeight + (maxHeight - baseHeight) * extendedRatio;
+    
+    animatedHeight += ((float)playerHeight - animatedHeight) * 0.1;
+    
     pg.pushMatrix();
-    pg.translate(animatedPosX + gridSize/2, animatedPosY + gridSize/2, 50);
-    pg.box(gridSize - 10, gridSize - 10, 100);
+    pg.translate(animatedPosX + gridSize/2, animatedPosY + gridSize/2, animatedHeight/2);
+    pg.box(gridSize - 10, gridSize - 10, animatedHeight);
     pg.popMatrix();
     
     pg.pushMatrix();
-    pg.translate(0, 0, 100.0);
+    pg.translate(0, 0, animatedHeight + 0.01);
     pg.textFont(moveCounterFont);
     pg.fill(0);
     pg.text(allowedFutureMoves, animatedPosX + gridSize/2 - pg.textWidth(allowedFutureMoves + "")/2, animatedPosY + 40);
