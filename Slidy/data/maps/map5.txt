@@ -1,4 +1,16 @@
 Key and Steps
-11,3
-0,0,5
-1,0,5
+3,11
+0,10,5
+2,10,5
+x--
+xb-
+xbx
+x-x
+xbx
+xbx
+x-x
+xbx
+---
+-x-
+-x-
+

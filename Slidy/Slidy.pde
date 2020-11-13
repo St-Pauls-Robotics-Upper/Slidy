@@ -6,11 +6,13 @@ PFont moveCounterFont;
 PGraphics pg;
 
 void setup() {
+  //surface.setResizable(true);
   titleFont = loadFont("AvenirNext-UltraLight-70.vlw");
   bodyFont = loadFont("AvenirNext-Regular-25.vlw");
   captionFont = loadFont("AvenirNext-DemiBold-15.vlw");
   moveCounterFont = loadFont("Apple-Chancery-40.vlw");
   size(900, 700, P2D);
+  //fullScreen(P2D);
   pg = createGraphics(900, 700, P3D);
   pg.pixelDensity = 2;
   pg.smooth(2);
