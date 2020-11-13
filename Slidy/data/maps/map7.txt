@@ -1,10 +1,13 @@
-Juggle
-8,5
-0,2,9
-7,2,5
-xxxxxxxx
-     xxx
-        
-   xxxxx
-xxxxxxxx
+Cupid
+9,7
+1,2,6
+2,1,6
+--xx-xx--
+-x--x--x-
+x-------x
+-x-----x-
+--x---x--
+---xrx---
+----x----
+
 

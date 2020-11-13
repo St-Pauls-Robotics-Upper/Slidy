@@ -5,7 +5,7 @@ boolean transitionalToBlack = false;
 boolean transitionalToNextLevel = true;
 boolean transitionalToEnd = false;
 
-int numberOfLevels = 8; //this is the total number of levels, set to your last number of map file
+int numberOfLevels = 9; //this is the total number of levels, set to your last number of map file
 
 float transitionTimer() {
   return min(max(transitionStartTime - millis() + transitionDuration, 0), transitionDuration);

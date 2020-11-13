@@ -10,8 +10,6 @@ class Players {
   int allowedFutureMoves;
   boolean havePendingTilings = false;
   
-  PImage img;
-  
   float animatedPosX, animatedPosY, animatedHeight;
   
   Players(int positionX, int positionY, int identity, int maxAllowedMoves) {
@@ -21,8 +19,6 @@ class Players {
     this.identity = identity;
     
     mapBuffer[positionX][positionY] = identity;
-    
-    img = loadImage("player"+identity+".png");
     
     computeAvalableMoves();
   }
