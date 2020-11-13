@@ -164,11 +164,11 @@ class Players {
         pg.fill(255,100,100);
       }
     }
-    //rect(animatedPosX, animatedPosY, gridSize, gridSize);
+    pg.rect(animatedPosX, animatedPosY, gridSize, gridSize);
     //image(img, animatedPosX, animatedPosY,gridSize,gridSize);
     pg.pushMatrix();
-    pg.translate(animatedPosX + gridSize/2, animatedPosY + gridSize/2);
-    pg.box(gridSize - 10, gridSize - 10, 200);
+    pg.translate(animatedPosX + gridSize/2, animatedPosY + gridSize/2, 50);
+    pg.box(gridSize - 10, gridSize - 10, 100);
     pg.popMatrix();
     
     pg.pushMatrix();

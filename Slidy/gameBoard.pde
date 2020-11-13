@@ -48,8 +48,8 @@ void drawGameBoard() {
           //rect(drawingX, drawingY, gridSize, gridSize);
           
           pg.pushMatrix();
-          pg.translate(drawingX + gridSize/2, drawingY + gridSize/2);
-          pg.box(gridSize, gridSize, 200);
+          pg.translate(drawingX + gridSize/2, drawingY + gridSize/2, 50);
+          pg.box(gridSize, gridSize, 100);
           pg.popMatrix();
           
         break;
@@ -86,8 +86,15 @@ void loadData(int file) {
         case 'x':
           mapBuffer[ix][iy] = -1;
         break;
+        case 'b':
+          pa.maxAllowedTiles += 1;
+          mapBuffer[ix][iy] = pa.identity;
+        break;
+        case 'r':
+          pb.maxAllowedTiles += 1;
+          mapBuffer[ix][iy] = pb.identity;
+        break;
         default: 
-          //mapBuffer[ix][iy] = 0;
         break;
       }
     }
