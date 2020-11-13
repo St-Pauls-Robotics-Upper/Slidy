@@ -1,8 +1,11 @@
-int level = 0;
+int level = 0;//start-up level, used for debug, set to 0 for release
 float transitionStartTime = -1;
 float transitionDuration = 800;
 boolean transitionalToBlack = false;
 boolean transitionalToNextLevel = true;
+boolean transitionalToEnd = false;
+
+int numberOfLevels = 5; //this is the total number of levels, set to your last number of map file
 
 float transitionTimer() {
   return min(max(transitionStartTime - millis() + transitionDuration, 0), transitionDuration);
@@ -12,16 +15,16 @@ void doneLevel(boolean finishLevel) {
   transitionalToBlack = true;
   transitionalToNextLevel = finishLevel;
   transitionStartTime = millis();
-  
-  if(level == 3 && finishLevel) {
-    //change the level == 3 to maximum leves
-    exit();
-  }
 }
 
 void render() {
   
-  renderGame();
+  if (transitionalToEnd) {
+    renderEndScreen();
+  } else {
+    renderGame();
+  }
+  
   float countdown = transitionTimer();
   if (transitionStartTime != -1) {
     float ratio = countdown/transitionDuration;
@@ -36,9 +39,14 @@ void render() {
       if (transitionalToBlack) {
         transitionalToBlack = false;
         transitionStartTime = millis();
-        if (transitionalToNextLevel) level ++;
         
-        loadData(level);
+        if(level == numberOfLevels && transitionalToNextLevel) {
+          transitionalToEnd = true;
+          //exit();
+        } else {
+          if (transitionalToNextLevel) level ++;
+          loadData(level);
+        }
       } else {
         transitionStartTime = -1;
       }
@@ -59,9 +67,19 @@ void renderSpash(float opacity) {
   }
 }
 
+void renderEndScreen() {
+  fill(255);
+  textFont(largeTitleFont);
+  text("abc", 300, 300);
+}
+
 void renderGame() {
   pg.beginDraw();
   pg.background(0);
+  
+  float zoom = 0;
+  pg.camera(width/2.0, height/2.0, (height/2.0) / tan(PI*30.0 / 180.0), width/2.0, height/2.0, 0, 0, 1, 0);
+  
   drawGameBoard();
   pa.render();
   pb.render();

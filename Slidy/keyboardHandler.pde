@@ -3,6 +3,10 @@ void keyPressed() {
     return;
   }
   
+  if (transitionalToEnd) {
+    return;
+  }
+  
   switch (keyCode) {
     case 87: //w
       pa.movePlayer(Direction.up);

@@ -12,7 +12,7 @@ void setup() {
   pixelDensity(2);
   smooth(4);
   //frameRate(5);
-  loadData(0);
+  loadData(level);
 }
 
 void draw() {
