@@ -1,0 +1,9 @@
+Trap and Escape
+10,5
+9,2,9
+0,2,6
+xxxxxxxxxx
+--xxx--xxx
+--r-------
+--xxx--xxx
+xxxxxxxxxx

@@ -1,12 +1,10 @@
-Planning
-7,7
-6,3,9
-3,6,9
-    xxx
- xx xxx
- x   xx  
-       
-xx   xx
-xxx xxx
-xxx xxx
-
+UseAll
+6,6
+0,4,8
+5,2,4
+xxxxxx
+x  xxx
+x  x  
+x  x x
+     x
+xxxxxx

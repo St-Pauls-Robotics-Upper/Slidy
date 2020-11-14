@@ -1,4 +1,12 @@
-False Symmetrical
-6,6
-0,0,17
-5,5,17
+Planning
+7,7
+6,3,9
+3,6,9
+    xxx
+ xx xxx
+ x   xx  
+       
+xx   xx
+xxx xxx
+xxx xxx
+

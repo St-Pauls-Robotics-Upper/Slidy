@@ -1,0 +1,17 @@
+City
+50,13
+0,11,69
+49,11,43
+xxxxxxxxxxxxxxxxxxxbxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxbxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxbbbxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxx   xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxx x xxxxxxxxxxxxxxxxxx    xxxxxxx
+xxxxxxxxx  xxxxxx  b  xxxxxxxxxxxxxxxxx xx x  r  x
+xxxxxxxx    xxxxx xxx xxxxxxxxxxxx   xx rr x rrr x
+xxx   xx xx xxxx  bbb  xxxxxbbxxxx x xx xx x  r xx
+xxx x xx bb xxxx xxxxx xxxxxbbrrxx x xx xx xx r xx
+xxx b xx xx xxxx xbbbx xxx  bbrrx  x  x rr xx r xx
+xxx x xx bb xxxx xxxxx xxx  bbrrx xxx x xx xxxrxxx
+    b    bb      bbbbb            rrr   rr        
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

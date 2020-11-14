@@ -1,9 +1,9 @@
-Trap and Escape
-10,5
-9,2,9
-0,2,6
-xxxxxxxxxx
---xxx--xxx
---r-------
---xxx--xxx
-xxxxxxxxxx
+TwoWays
+16,5
+0,3,9
+15,1,9
+xxxxxxxxxxxxxxxx
+xx rr xx        
+xx xx xx x xx xx
+         x bb xx
+xxxxxxxxxxxxxxxx

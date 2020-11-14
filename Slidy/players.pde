@@ -29,6 +29,9 @@ class Players {
   }
   
   void movePlayer(Direction direction) {
+    blop.rate(random(0.8,0.9));
+    blop.play();
+    
     if (allowedFutureMoves == 0) {
       return;
     }

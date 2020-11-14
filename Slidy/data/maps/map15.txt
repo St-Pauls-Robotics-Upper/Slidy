@@ -1,0 +1,18 @@
+Cupid 2
+16,14
+15,8,14
+5,9,44
+xxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxx
+xxx----xx----xxx
+xx--xx----xx--xx
+x--xxxxxxxxxx--x
+x--xxxxxxxxxx--x
+xx--xxxxxxxx--xx
+--x-xxxxxxxx-xxx
+----------------
+--xxx-xxxx-xxxxx
+xxxxx--xx--xxxxx
+xxxxxx----xxxxxx
+xxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxx

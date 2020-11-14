@@ -1,11 +1,12 @@
-Round Round Round
-6,7
-0,0,1
-5,6,1
--xxxxx
-rbbbbb
-rxxxxb
-rb--rb
-rxxxxb
-rrrrrb
-xxxxx-
+Windmill
+8,8
+0,0,13
+7,7,13
+    xxx 
+xxx xxx 
+xxx xxx 
+xxx     
+     xxx
+ xxx xxx
+ xxx xxx
+ xxx    

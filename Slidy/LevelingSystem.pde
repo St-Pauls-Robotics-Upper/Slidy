@@ -4,8 +4,8 @@ float transitionDuration = 0;
 boolean transitionalToBlack = false;
 boolean transitionalToNextLevel = true;
 
-int numberOfLevels = 9; //this is the total number of levels, set to your last number of map file
-//9
+int numberOfLevels = 17; //this is the total number of levels, set to your last number of map file
+
 float transitionTimer() {
   return min(max(transitionStartTime - millis() + transitionDuration, 0), transitionDuration);
 }
@@ -93,9 +93,10 @@ void renderEndScreen() {
   int creditBlockY = 300;
   centerAlignedWord("TEAM G2C2", creditBlockY, FontSize.body);
   centerAlignedWord("Yuanda Liu", creditBlockY + 22, FontSize.caption);
-  centerAlignedWord("Yuanda Liu", creditBlockY + 42, FontSize.caption);
-  centerAlignedWord("Yuanda Liu", creditBlockY + 62, FontSize.caption);
-  centerAlignedWord("Yuanda Liu", creditBlockY + 82, FontSize.caption);
+  centerAlignedWord("Jingchen Jiang", creditBlockY + 42, FontSize.caption);
+  centerAlignedWord("Caitlin F", creditBlockY + 62, FontSize.caption);
+  centerAlignedWord("Mingzhou(August) Ou", creditBlockY + 82, FontSize.caption);
+  centerAlignedWord("Tate S", creditBlockY + 102, FontSize.caption);
   
   fill(100);
   centerAlignedWord("Press R to play again", height - 20, FontSize.caption);
@@ -123,5 +124,5 @@ void renderGame() {
   //textFont(largeTitleFont);
   //String content = worldName;
   //text(content, (width - textWidth(content))/2, 60);
-  centerAlignedWord(worldName, 65, FontSize.title);
+  centerAlignedWord("#" + level + ":" + worldName, 65, FontSize.title);
 }

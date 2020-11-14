@@ -1,0 +1,14 @@
+Pi
+50,10
+1,6,26
+43,6,27
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xb      xx     xxxxrxxxxrxxxxrxxxrrrxxxrrrxxxxxxxx
+xx xbxx    xxx xxxrrxxxrrxxxrrxxxrxxxxrxxxrxxxxxxx
+xx xbxxxxxxxbb xxxxrxrrxrxxxxrxxxrrxxxxrrrrxxxxxxx
+xx xbxxbbbxxxx xxxxrxxxxrxxxxrxxxxxrxxxxxxrxxxxxxx
+x  xbbxxxxxbbb                              xrrxrr
+xxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxxxxxxxxxxxxxrrxrr
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
