@@ -1,12 +1,12 @@
 Windmill
 8,8
-0,0,13
-7,7,13
-    xxx 
-xxx xxx 
-xxx xxx 
-xxx     
-     xxx
- xxx xxx
- xxx xxx
- xxx    
+0,0,7
+7,7,6
+    xxxr
+xxx xxxr
+xxx xxxr
+xxx  rrr
+bbbb xxx
+bxxx xxx
+bxxx xxx
+bxxx    
