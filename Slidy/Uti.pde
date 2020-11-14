@@ -13,6 +13,5 @@ void centerAlignedWord(String content, int yPos, FontSize font) {
     break;
   }
   
-  
   text(content, (width - textWidth(content))/2, yPos);
 }

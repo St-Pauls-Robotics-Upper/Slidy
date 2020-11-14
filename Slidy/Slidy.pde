@@ -8,6 +8,7 @@ PFont moveCounterFont;
 PGraphics pg;
 
 SoundFile blop;
+SoundFile bgm;
 
 void setup() {
   //load font
@@ -18,6 +19,8 @@ void setup() {
   
   //load sound
   blop = new SoundFile(this, "data/blop.mp3");
+  
+  thread("startBGM");
   
   //load level
   loadJsonObject();

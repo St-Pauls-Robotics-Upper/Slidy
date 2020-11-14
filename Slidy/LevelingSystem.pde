@@ -102,6 +102,11 @@ void renderEndScreen() {
   centerAlignedWord("Press R to play again", height - 20, FontSize.caption);
 }
 
+void startBGM() {
+  bgm = new SoundFile(this, "data/bgm.mp3");
+  bgm.loop();
+}
+
 void renderGame() {
   pg.beginDraw();
   pg.background(0);
@@ -124,5 +129,44 @@ void renderGame() {
   //textFont(largeTitleFont);
   //String content = worldName;
   //text(content, (width - textWidth(content))/2, 60);
-  centerAlignedWord("#" + level + ":" + worldName, 65, FontSize.title);
+  centerAlignedWord(worldName, 65, FontSize.title);
+  
+  //display hints
+  if (level == 0) {
+    firstHint();
+  }
+  switch(level) {
+    case 0:
+      firstHint();
+    break;
+    case 1: 
+      secondHint();
+    break;
+    case 2:
+      thirdHint();
+    break;
+  }
+}
+
+void firstHint() {
+  fill(255);
+  centerAlignedWord("Blue - W S A D   Red - UP DOWN LEFT RIGHT", 500, FontSize.caption);
+  
+  fill(200);
+  centerAlignedWord("RULE 1", 600, FontSize.caption);
+  centerAlignedWord("Void with Joint is the Critical Point", 620, FontSize.caption);
+}
+
+void secondHint() {
+  fill(200);
+  centerAlignedWord("RULE 2", 600, FontSize.caption);
+  centerAlignedWord("Void without Joint ment the Endding Point", 620, FontSize.caption);
+  centerAlignedWord("Joint without Void ment the Disappoint", 640, FontSize.caption);
+}
+
+void thirdHint() {
+  fill(200);
+  centerAlignedWord("RULE 3", 600, FontSize.caption);
+  centerAlignedWord("Inlet your Cassette is never Accepted", 620, FontSize.caption);
+  centerAlignedWord("Inset the Assets of your Friend is a Smart Set", 640, FontSize.caption);
 }
