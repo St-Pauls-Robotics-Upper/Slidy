@@ -1,37 +1,40 @@
 void keyPressed() {
-  if (transitionStartTime != -1) {
-    return;
-  }
-  
-  if (transitionalToEnd) {
-    return;
-  }
-  
-  switch (keyCode) {
-    case 87: //w
-      pa.movePlayer(Direction.up);
-    break;
-    case 83: //s
-      pa.movePlayer(Direction.down);
-    break;
-    case 65: //a
-      pa.movePlayer(Direction.left);
-    break;
-    case 68: //d
-      pa.movePlayer(Direction.right);
-    break;
-    
-    case 38: //up
-      pb.movePlayer(Direction.up);
-    break;
-    case 40: //down
-      pb.movePlayer(Direction.down);
-    break;
-    case 37: //left
-      pb.movePlayer(Direction.left);
-    break;
-    case 39: //right
-      pb.movePlayer(Direction.right);
-    break;
+  if (transitionStartTime == -1) {
+    if (level != -1) {
+      switch (key) {
+        case 'w':
+          pa.movePlayer(Direction.up);
+        break;
+        case 's':
+          pa.movePlayer(Direction.down);
+        break;
+        case 'a':
+          pa.movePlayer(Direction.left);
+        break;
+        case 'd':
+          pa.movePlayer(Direction.right);
+        break;
+      }
+      
+      switch (keyCode) {
+        case UP:
+          pb.movePlayer(Direction.up);
+        break;
+        case DOWN:
+          pb.movePlayer(Direction.down);
+        break;
+        case LEFT:
+          pb.movePlayer(Direction.left);
+        break;
+        case RIGHT:
+          pb.movePlayer(Direction.right);
+        break;
+      }
+    } else {
+      if (key == 'r') {
+        level = -1;
+        doneLevel(true);
+      }
+    }
   }
 }

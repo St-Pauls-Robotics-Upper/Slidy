@@ -6,11 +6,15 @@ PFont moveCounterFont;
 PGraphics pg;
 
 void setup() {
-  //surface.setResizable(true);
+  //load font
   titleFont = loadFont("AvenirNext-UltraLight-70.vlw");
   bodyFont = loadFont("AvenirNext-Regular-25.vlw");
   captionFont = loadFont("AvenirNext-DemiBold-15.vlw");
   moveCounterFont = loadFont("Apple-Chancery-40.vlw");
+  
+  //load level
+  loadJsonObject();
+  
   size(900, 700, P2D);
   //fullScreen(P2D);
   pg = createGraphics(900, 700, P3D);
@@ -25,4 +29,5 @@ void setup() {
 void draw() {
   background(0);
   render();
+  //renderEndScreen();
 }

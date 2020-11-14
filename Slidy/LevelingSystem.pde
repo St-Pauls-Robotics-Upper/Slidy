@@ -1,17 +1,35 @@
 int level = 0;//start-up level, used for debug, set to 0 for release
 float transitionStartTime = -1;
-float transitionDuration = 800;
+float transitionDuration = 0;
 boolean transitionalToBlack = false;
 boolean transitionalToNextLevel = true;
-boolean transitionalToEnd = false;
 
 int numberOfLevels = 9; //this is the total number of levels, set to your last number of map file
-
+//9
 float transitionTimer() {
   return min(max(transitionStartTime - millis() + transitionDuration, 0), transitionDuration);
 }
 
+void loadJsonObject() {
+  JSONObject levelJSON = new JSONObject();
+  levelJSON = loadJSONObject("data/level.json");
+  level = levelJSON.getInt("level");
+}
+
+void saveLevelJson() {
+  JSONObject levelJSON = new JSONObject();
+  int savedLevel = max(0, level);
+  levelJSON.setInt("level", savedLevel);
+  saveJSONObject(levelJSON, "data/level.json");
+}
+
 void doneLevel(boolean finishLevel) {
+  if (!finishLevel) {
+    transitionDuration = 800;
+  } else {
+    transitionDuration = 2000;
+  }
+  
   transitionalToBlack = true;
   transitionalToNextLevel = finishLevel;
   transitionStartTime = millis();
@@ -19,7 +37,7 @@ void doneLevel(boolean finishLevel) {
 
 void render() {
   
-  if (transitionalToEnd) {
+  if (level == -1) {
     renderEndScreen();
   } else {
     renderGame();
@@ -41,12 +59,14 @@ void render() {
         transitionStartTime = millis();
         
         if(level == numberOfLevels && transitionalToNextLevel) {
-          transitionalToEnd = true;
+          level = -1;
           //exit();
         } else {
           if (transitionalToNextLevel) level ++;
           loadData(level);
         }
+        
+        saveLevelJson();
       } else {
         transitionStartTime = -1;
       }
@@ -67,7 +87,18 @@ void renderSpash(float opacity) {
 
 void renderEndScreen() {
   fill(255);
-  centerAlignedWord("Thanks for Playing Slidy", 400, FontSize.title);
+  int titleBlockY = 200;
+  centerAlignedWord("Thanks for Playing Slidy", titleBlockY, FontSize.title);
+  
+  int creditBlockY = 300;
+  centerAlignedWord("TEAM G2C2", creditBlockY, FontSize.body);
+  centerAlignedWord("Yuanda Liu", creditBlockY + 22, FontSize.caption);
+  centerAlignedWord("Yuanda Liu", creditBlockY + 42, FontSize.caption);
+  centerAlignedWord("Yuanda Liu", creditBlockY + 62, FontSize.caption);
+  centerAlignedWord("Yuanda Liu", creditBlockY + 82, FontSize.caption);
+  
+  fill(100);
+  centerAlignedWord("Press R to play again", height - 20, FontSize.caption);
 }
 
 void renderGame() {
