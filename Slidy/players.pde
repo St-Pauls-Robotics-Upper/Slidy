@@ -29,8 +29,6 @@ class Players {
   }
   
   void movePlayer(Direction direction) {
-    blop.rate(random(0.8,0.9));
-    blop.play();
     
     if (allowedFutureMoves == 0) {
       return;
@@ -59,6 +57,9 @@ class Players {
       if (havePendingTilings) {
         layTile();
       }
+      //play sound effect
+      blop.rate(random(0.95,1.05));
+      blop.play();
       
       //move it
       positionX = targetX;
@@ -66,6 +67,9 @@ class Players {
       
       //lay tile at current position
       havePendingTilings = true;
+    } else {
+      blop.rate(0.5);
+      blop.play();
     }
     
     playerMoved();
@@ -184,8 +188,8 @@ class Players {
     
     pg.pushMatrix();
     pg.translate(0, 0, animatedHeight + 0.01);
-    pg.textFont(moveCounterFont);
-    pg.fill(0);
+    pg.textFont(bodyFont);
+    pg.fill(0, allowedFutureMoves == 0 ? 50 : 255);
     pg.text(allowedFutureMoves, animatedPosX + gridSize/2 - pg.textWidth(allowedFutureMoves + "")/2, animatedPosY + 40);
     pg.popMatrix();
   }

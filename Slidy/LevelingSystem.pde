@@ -37,6 +37,7 @@ void doneLevel(boolean finishLevel) {
 
 void render() {
   
+  
   if (level == -1) {
     renderEndScreen();
   } else {
@@ -102,11 +103,6 @@ void renderEndScreen() {
   centerAlignedWord("Press R to play again", height - 20, FontSize.caption);
 }
 
-void startBGM() {
-  bgm = new SoundFile(this, "data/bgm.mp3");
-  bgm.loop();
-}
-
 void renderGame() {
   pg.beginDraw();
   pg.background(0);
@@ -154,19 +150,21 @@ void firstHint() {
   
   fill(200);
   centerAlignedWord("RULE 1", 600, FontSize.caption);
-  centerAlignedWord("Void with Joint is the Critical Point", 620, FontSize.caption);
+  centerAlignedWord("The Count of Amount of your Tile is Accounted", 620, FontSize.caption);
+  centerAlignedWord("The Amount Counted is always Bounded", 640, FontSize.caption);
 }
 
 void secondHint() {
   fill(200);
   centerAlignedWord("RULE 2", 600, FontSize.caption);
-  centerAlignedWord("Void without Joint ment the Endding Point", 620, FontSize.caption);
-  centerAlignedWord("Joint without Void ment the Disappoint", 640, FontSize.caption);
+  centerAlignedWord("Void while Joint is the Critical Point", 620, FontSize.caption);
+  centerAlignedWord("Void without Joint ment the Endding Point", 640, FontSize.caption);
+  centerAlignedWord("Joint without Void ment the Disappoint", 660, FontSize.caption);
 }
 
 void thirdHint() {
   fill(200);
   centerAlignedWord("RULE 3", 600, FontSize.caption);
-  centerAlignedWord("Inlet your Cassette is never Accepted", 620, FontSize.caption);
-  centerAlignedWord("Inset the Assets of your Friend is a Smart Set", 640, FontSize.caption);
+  centerAlignedWord("Inlet your Tile is Never Accepted", 620, FontSize.caption);
+  centerAlignedWord("Retrace the Past of your Friend is a Smart Set", 640, FontSize.caption);
 }

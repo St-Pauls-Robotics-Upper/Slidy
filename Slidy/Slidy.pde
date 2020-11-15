@@ -36,6 +36,12 @@ void setup() {
   loadData(level);
 }
 
+void startBGM() {
+  bgm = new SoundFile(this, "data/bgm.mp3");
+  bgm.amp(0.3);
+  bgm.loop();
+}
+
 void draw() {
   background(0);
   render();
