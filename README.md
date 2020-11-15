@@ -4,6 +4,8 @@ This is a submission for the ___First Game Jam 2020-2021___ by __G2C2 15664__ fr
 
 [![The St. Paul's schools](https://resources.finalsite.net/images/f_auto,q_auto/v1587736769/spsfg/vjk8xhcvxmwebyaamlwd/logo-TSPS.png)](https://www.stpaulsmd.org)
 
+__Document of Process: [link](/documentations/progressOnDevelopment.pdf)__
+
 Concept art of our game:
 
 ![Concept Art](/documentations/images/SlidyTrailer.gif)
