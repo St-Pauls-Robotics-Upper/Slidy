@@ -32,21 +32,21 @@ There is currently 17 levels within the game. Solution and description of the ga
 
 Index | Level | type | Short Description
 ---- | - | - | ----
-0  |             [Slidy](/documentations/solutions/000.md) | Tutorial   | 
-1  |    [Long Tail Tale](/documentations/solutions/001.md) | Tutorial   | 
-2  |             [Cross](/documentations/solutions/002.md) | Tutorial   | 
-3  |            [UseAll](/documentations/solutions/003.md) | Tutorial   | 
-4  |          [Windmill](/documentations/solutions/004.md) | Silly      | 
-5  |          [Lighting](/documentations/solutions/005.md) | Silly      | 
-6  |          [Planning](/documentations/solutions/006.md) | Tutorial   | 
-7  | [Round Round Round](/documentations/solutions/007.md) | Tutorial   | 
-8  |     [Key and Steps](/documentations/solutions/008.md) | Tutorial   | 
-9  |        [SideBySide](/documentations/solutions/009.md) | Thoughtful | 
-10 |           [TwoWays](/documentations/solutions/010.md) | Tutorial   | 
-11 | [False Symmetrical](/documentations/solutions/011.md) | Thoughtful | 
-12 |       [Fulfillment](/documentations/solutions/012.md) | Thoughtful | 
-13 |              [City](/documentations/solutions/013.md) | Silly      | 
-14 |                [Pi](/documentations/solutions/014.md) | Silly      | 
-15 |           [Cupid 2](/documentations/solutions/015.md) | Silly      | 
-16 |            [Juggle](/documentations/solutions/016.md) | Thoughtful | 
-17 |   [Trap and Escape](/documentations/solutions/017.md) | Thoughtful | 
+0  |             [Slidy](/documentations/solutions/000.md) | Tutorial   | start up screen 
+1  |    [Long Tail Tale](/documentations/solutions/001.md) | Tutorial   | introduce game rule 2 
+2  |             [Cross](/documentations/solutions/002.md) | Tutorial   | introduce game rule 3 
+3  |            [UseAll](/documentations/solutions/003.md) | Tutorial   | reinforce game rule 2
+4  |          [Windmill](/documentations/solutions/004.md) | Silly      | appears like a windmill 
+5  |          [Lighting](/documentations/solutions/005.md) | Silly      | appears like a lightning 
+6  |          [Planning](/documentations/solutions/006.md) | Tutorial   | introduce the idea of planning 
+7  | [Round Round Round](/documentations/solutions/007.md) | Tutorial   | reinforce game rule 3
+8  |     [Key and Steps](/documentations/solutions/008.md) | Tutorial   | reinforce game rule 3
+9  |        [SideBySide](/documentations/solutions/009.md) | Thoughtful | first level that let you apply game rule meaningfully 
+10 |           [TwoWays](/documentations/solutions/010.md) | Tutorial   | easy peasy 
+11 | [False Symmetrical](/documentations/solutions/011.md) | Thoughtful | first level with no clear path 
+12 |       [Fulfillment](/documentations/solutions/012.md) | Thoughtful | no clear path 
+13 |              [City](/documentations/solutions/013.md) | Silly      | silly with style
+14 |                [Pi](/documentations/solutions/014.md) | Silly      | silly with style
+15 |           [Cupid 2](/documentations/solutions/015.md) | Silly      | silly with style
+16 |            [Juggle](/documentations/solutions/016.md) | Thoughtful | approach it like a math problem
+17 |   [Trap and Escape](/documentations/solutions/017.md) | Thoughtful | approach it like a math problem
