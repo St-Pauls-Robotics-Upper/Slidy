@@ -27,11 +27,12 @@ void setup() {
   
   size(900, 700, P2D);
   //fullScreen(P2D);
-  pg = createGraphics(900, 700, P3D);
-  pg.pixelDensity = 2;
-  pg.smooth(2);
   pixelDensity(2);
   smooth(2);
+  
+  pg = createGraphics(width, height, P3D);
+  pg.pixelDensity = pixelDensity;
+  pg.smooth(2);
   //frameRate(5);
   loadData(level);
 }
@@ -43,6 +44,8 @@ void startBGM() {
 }
 
 void draw() {
+  
+  
   background(0);
   render();
   //renderEndScreen();

@@ -94,7 +94,7 @@ void renderEndScreen() {
   int creditBlockY = 300;
   centerAlignedWord("TEAM G2C2", creditBlockY, FontSize.body);
   centerAlignedWord("Yuanda Liu", creditBlockY + 22, FontSize.caption);
-  centerAlignedWord("Jingchen Jiang", creditBlockY + 42, FontSize.caption);
+  centerAlignedWord("Jingchen(Jason) Jiang", creditBlockY + 42, FontSize.caption);
   centerAlignedWord("Caitlin F", creditBlockY + 62, FontSize.caption);
   centerAlignedWord("Mingzhou(August) Ou", creditBlockY + 82, FontSize.caption);
   centerAlignedWord("Tate S", creditBlockY + 102, FontSize.caption);
@@ -166,5 +166,5 @@ void thirdHint() {
   fill(200);
   centerAlignedWord("RULE 3", 600, FontSize.caption);
   centerAlignedWord("Inlet your Tile is Never Accepted", 620, FontSize.caption);
-  centerAlignedWord("Retrace the Past of your Friend is a Smart Set", 640, FontSize.caption);
+  centerAlignedWord("Retrace the Past of your Friend is a Recommended", 640, FontSize.caption);
 }
