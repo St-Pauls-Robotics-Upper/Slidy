@@ -6,6 +6,8 @@ This is a submission for the ___First Game Jam 2020-2021___ by __G2C2 15664__ fr
 
 __Document of Process: [link](/documentations/progressOnDevelopment.pdf)__
 
+__Initial Notes: [link](/documentations/initialNotes.PNG)__
+
 Concept art of our game:
 
 ![Concept Art](/documentations/images/SlidyTrailer.gif)
