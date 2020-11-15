@@ -22,7 +22,7 @@ Joint without Void ment the Disappoint
 
 RULE 3
 Inlet your Tile is Never Accepted
-Retrace the Past of your Friend is a Smart Set
+Retrace the Past of your Friend is a Recommended
 ```
 
 
