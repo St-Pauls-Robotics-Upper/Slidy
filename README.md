@@ -1,13 +1,20 @@
 # Slidy
 
+This is a submission for the ___First Game Jam 2020-2021___ by __G2C2 15664__ from __The St. Paul's Schools__.
+
+[![The St. Paul's schools](https://resources.finalsite.net/images/f_auto,q_auto/v1587736769/spsfg/vjk8xhcvxmwebyaamlwd/logo-TSPS.png)](https://www.stpaulsmd.org)
+
+Concept art of our game:
+
+![Concept Art](/documentations/images/SlidyTrailer.gif)
+
+## Rules
 The game slidy is a two player game with multiple levels. The game follows three basic rules: 
 1. A __block__ (controled by the player) that can move and lay down a __set number of tiles__. 
 2. Level is complete when __two player meet__ (adjacent to each other) and have __spent all their tiles__. 
 3. A block can step on the __other player's tile__, but it can __never__ step on __itselves tile__. 
    * When that happends, the tile of player b is replaced by a tile of player a. 
    * In turn, the __player b will gain a tile__ while player a spend a tile. 
-
-![Comcept Art](/documentations/images/SlidyTrailer.gif)
 
 In game, the rules is phrased like the following with some artistic style to it: 
 ```
@@ -25,9 +32,7 @@ Inlet your Tile is Never Accepted
 Retrace the Past of your Friend is a Recommended
 ```
 
-
-
-# Level details
+## Level details
 There is currently 17 levels within the game. Solution and description of the game can be found below. 
 
 Index | Level | type | Short Description
