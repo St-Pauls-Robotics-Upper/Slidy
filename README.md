@@ -55,3 +55,21 @@ Index | Level | type | Short Description
 15 |           [Cupid 2](/documentations/solutions/015.md) | Silly      | silly with style
 16 |            [Juggle](/documentations/solutions/016.md) | Thoughtful | approach it like a math problem
 17 |   [Trap and Escape](/documentations/solutions/017.md) | Thoughtful | approach it like a math problem
+
+## Credits
+### Coach
+Name | Role
+-- | --
+Sarah Balisalisa | Supervisor
+Diane Radov | Coach 
+Jason Stine | Coach 
+
+### Students(contributor)
+Name | Role
+-- | --
+Yuanda Liu | Senior Develper, Manager
+Jingchen Jiang | Music Designer 
+Caitlin F | Level Designer, Artist
+Mingzhou(August) Ou | Level Designer, Animator
+Tate S | Sound Sampler
+
