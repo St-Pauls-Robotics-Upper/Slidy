@@ -1,7 +1,7 @@
 # Slidy
 
 The game slidy is a two player game with multiple levels. The game follows three basic rules: 
-1. A __block__ (controled by the player) can move and lay down a __set number of tiles__. 
+1. A __block__ (controled by the player) that can move and lay down a __set number of tiles__. 
 2. Level is complete when __two player meet__ (adjacent to each other) and have __spent all their tiles__. 
 3. A block can step on the __other player's tile__, but it can __never__ step on __itselves tile__. 
    * When that happends, the tile of player b is replaced by a tile of player a. 
